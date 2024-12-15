@@ -13,34 +13,33 @@ using System.Windows.Forms;
 
 namespace Perfumeria.Forms
 {
-    public partial class FmrEditarArea : Form
+    public partial class FmrEditarProducto : Form
     {
         PerfumeriaContex context = new PerfumeriaContex();
-        int idAreaEditado;
-        Area? area;
-
-        public FmrEditarArea()
+        int idProductoEditado;
+        Producto? producto;
+        public FmrEditarProducto()
         {
             InitializeComponent();
-            this.idAreaEditado = idAreaEditado;
+            this.idProductoEditado = idProductoEditado;
             CargarDatosEnPantalla();
         }
 
         private void CargarDatosEnPantalla()
         {
             PerfumeriaContex context = new PerfumeriaContex();
-            area = context.Areas.Find(idAreaEditado);
-            if (area != null)
+            producto = context.Productos.Find(idProductoEditado);
+            if (producto != null)
             {
-                txtNombre.Text = area.Nombre;
+                txtNombre.Text = producto.Nombre;
             }
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             PerfumeriaContex context = new PerfumeriaContex();
-            area.Nombre = txtNombre.Text;
-            context.Entry(area).State = EntityState.Modified;
+            producto.Nombre = txtNombre.Text;
+            context.Entry(producto).State = EntityState.Modified;
             context.SaveChanges();
             this.Close();
         }

@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Perfumeria.Data;
-using Perfumeria.Forms;
+﻿using Perfumeria.Data;
 using Perfumeria.Models;
 using System;
 using System.Collections.Generic;
@@ -14,26 +12,29 @@ using System.Windows.Forms;
 
 namespace Perfumeria.Forms
 {
-    public partial class FmrEditarMetodo : Form
+    public partial class FmrNuevoMetodo : Form
     {
         PerfumeriaContex context = new PerfumeriaContex();
-        private int idMetodoEditar;
 
-        public FmrEditarMetodo()
+
+        public FmrNuevoMetodo()
         {
             InitializeComponent();
-        }
-        public FmrEditarMetodo(int idMetodoEditar)
-        {
-            this.idMetodoEditar = idMetodoEditar;
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            var metododepago = context.MetodosDePago.Find(idMetodoEditar);
-            metododepago.Nombre = txtNombre.Text;
-            context.Entry(metododepago).State = EntityState.Modified;
+            var MetodoDePago = new MetodoDePago()
+            {
+                Nombre = txtNombre.Text,
+            };
+            context.MetodosDePago.Add(MetodoDePago);
             context.SaveChanges();
+            this.Close();
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

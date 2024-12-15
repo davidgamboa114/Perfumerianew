@@ -1,6 +1,6 @@
 ﻿namespace Perfumeria.Forms
 {
-    partial class FmrNuevaArea
+    partial class FmrNuevoMetodo
     {
         /// <summary>
         /// Required designer variable.
@@ -40,7 +40,7 @@
             label1.Location = new Point(224, 157);
             label1.Name = "label1";
             label1.Size = new Size(51, 15);
-            label1.TabIndex = 7;
+            label1.TabIndex = 11;
             label1.Text = "Nombre";
             // 
             // txtNombre
@@ -48,14 +48,14 @@
             txtNombre.Location = new Point(325, 147);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(254, 23);
-            txtNombre.TabIndex = 6;
+            txtNombre.TabIndex = 10;
             // 
             // BtnCancelar
             // 
             BtnCancelar.Location = new Point(490, 267);
             BtnCancelar.Name = "BtnCancelar";
             BtnCancelar.Size = new Size(89, 37);
-            BtnCancelar.TabIndex = 5;
+            BtnCancelar.TabIndex = 9;
             BtnCancelar.Text = "Cancelar";
             BtnCancelar.UseVisualStyleBackColor = true;
             BtnCancelar.Click += BtnCancelar_Click;
@@ -65,12 +65,12 @@
             BtnGuardar.Location = new Point(222, 267);
             BtnGuardar.Name = "BtnGuardar";
             BtnGuardar.Size = new Size(88, 37);
-            BtnGuardar.TabIndex = 4;
+            BtnGuardar.TabIndex = 8;
             BtnGuardar.Text = "Guardar";
             BtnGuardar.UseVisualStyleBackColor = true;
             BtnGuardar.Click += BtnGuardar_Click;
             // 
-            // FmrNuevaArea
+            // FmrNuevoMetodo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -79,8 +79,8 @@
             Controls.Add(txtNombre);
             Controls.Add(BtnCancelar);
             Controls.Add(BtnGuardar);
-            Name = "FmrNuevaArea";
-            Text = "FmrNuevaArea";
+            Name = "FmrNuevoMetodo";
+            Text = "FmrNuevoMetodo";
             ResumeLayout(false);
             PerformLayout();
         }

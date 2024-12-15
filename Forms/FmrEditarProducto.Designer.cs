@@ -1,6 +1,6 @@
 ﻿namespace Perfumeria.Forms
 {
-    partial class FmrNuevaArea
+    partial class FmrEditarProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -70,7 +70,7 @@
             BtnGuardar.UseVisualStyleBackColor = true;
             BtnGuardar.Click += BtnGuardar_Click;
             // 
-            // FmrNuevaArea
+            // FmrEditarProducto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -79,8 +79,8 @@
             Controls.Add(txtNombre);
             Controls.Add(BtnCancelar);
             Controls.Add(BtnGuardar);
-            Name = "FmrNuevaArea";
-            Text = "FmrNuevaArea";
+            Name = "FmrEditarProducto";
+            Text = "FmrEditarProducto";
             ResumeLayout(false);
             PerformLayout();
         }
