@@ -1,4 +1,4 @@
-﻿namespace Perfumeria.Forms.Area
+﻿namespace Perfumeria.Forms
 {
     partial class FmrNuevaArea
     {
@@ -29,55 +29,55 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
+            txtNombre = new TextBox();
+            BtnCancelar = new Button();
+            BtnGuardar = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(238, 127);
+            label1.Location = new Point(224, 157);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            label1.Size = new Size(51, 15);
+            label1.TabIndex = 7;
+            label1.Text = "Nombre";
             // 
-            // textBox1
+            // txtNombre
             // 
-            textBox1.Location = new Point(316, 119);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 1;
+            txtNombre.Location = new Point(325, 147);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(254, 23);
+            txtNombre.TabIndex = 6;
             // 
-            // button1
+            // BtnCancelar
             // 
-            button1.Location = new Point(199, 239);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            BtnCancelar.Location = new Point(490, 267);
+            BtnCancelar.Name = "BtnCancelar";
+            BtnCancelar.Size = new Size(89, 37);
+            BtnCancelar.TabIndex = 5;
+            BtnCancelar.Text = "Cancelar";
+            BtnCancelar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BtnGuardar
             // 
-            button2.Location = new Point(436, 239);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 3;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            BtnGuardar.Location = new Point(222, 267);
+            BtnGuardar.Name = "BtnGuardar";
+            BtnGuardar.Size = new Size(88, 37);
+            BtnGuardar.TabIndex = 4;
+            BtnGuardar.Text = "Guardar";
+            BtnGuardar.UseVisualStyleBackColor = true;
+            BtnGuardar.Click += BtnGuardar_Click;
             // 
             // FmrNuevaArea
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
             Controls.Add(label1);
+            Controls.Add(txtNombre);
+            Controls.Add(BtnCancelar);
+            Controls.Add(BtnGuardar);
             Name = "FmrNuevaArea";
             Text = "FmrNuevaArea";
             ResumeLayout(false);
@@ -87,8 +87,8 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private Button button1;
-        private Button button2;
+        private TextBox txtNombre;
+        private Button BtnCancelar;
+        private Button BtnGuardar;
     }
 }

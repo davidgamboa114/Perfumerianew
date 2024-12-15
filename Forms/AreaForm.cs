@@ -1,4 +1,5 @@
 ﻿using Perfumeria.Data;
+using Perfumeria.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,13 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Perfumeria.Models;
 
-namespace Perfumeria.Forms.Area
+namespace Perfumeria.Forms
 {
     public partial class AreaForm : Form
     {
-
         public AreaForm()
         {
             InitializeComponent();
@@ -57,18 +56,18 @@ namespace Perfumeria.Forms.Area
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            FmrNuevaArea fmrNuevaArea = new FmrNuevaArea();
-            fmrNuevaArea.ShowDialog();
-            CargarGrilla();
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnEditar_Click_2(object sender, EventArgs e)
         {
             int idAEditar = (int)dataGridArea.CurrentRow.Cells[0].Value;
             FmrEditarArea fmrEditarArea = new FmrEditarArea(idAEditar);
             fmrEditarArea.ShowDialog();
+            CargarGrilla();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            FmrNuevaArea fmrNuevaArea = new FmrNuevaArea();
+            fmrNuevaArea.ShowDialog();
             CargarGrilla();
         }
 
@@ -78,3 +77,4 @@ namespace Perfumeria.Forms.Area
         }
     }
 }
+

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Perfumeria.Data;
+using Perfumeria.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,25 +9,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Perfumeria.
-namespace Perfumeria.Forms.Area
+
+namespace Perfumeria.Forms
 {
     public partial class FmrNuevaArea : Form
     {
+        PerfumeriaContex context = new PerfumeriaContex();
         public FmrNuevaArea()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            PerfumeriaContex context = new PerfumeriaContex();
-            var profesor = new Profesor()
+            var Area = new Area()
             {
                 Nombre = txtNombre.Text,
-
             };
-            context.Profesores.Add(profesor);
+            context.Areas.Add(Area);
             context.SaveChanges();
             this.Close();
         }
