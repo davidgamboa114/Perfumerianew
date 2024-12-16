@@ -49,6 +49,7 @@
             btnEliminar.TabIndex = 27;
             btnEliminar.Text = "ELIMINAR";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click_1;
             // 
             // btnGuardar
             // 
@@ -74,6 +75,7 @@
             btnSalir.TabIndex = 24;
             btnSalir.Text = "SALIR";
             btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // txtBusqueda
             // 

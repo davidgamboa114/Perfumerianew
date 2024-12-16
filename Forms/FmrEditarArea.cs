@@ -19,10 +19,10 @@ namespace Perfumeria.Forms
         int idAreaEditado;
         Area? area;
 
-        public FmrEditarArea()
+        public FmrEditarArea(int idAreaEditar)
         {
             InitializeComponent();
-            this.idAreaEditado = idAreaEditado;
+            this.idAreaEditado = idAreaEditar;
             CargarDatosEnPantalla();
         }
 
@@ -47,7 +47,17 @@ namespace Perfumeria.Forms
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show(
+                "¿Estás seguro de que deseas salir?",
+                "Confirmar salida",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

@@ -9,17 +9,49 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Folder Include="ViewForms\" />
-		<Folder Include="Reportes\" />
+	  <None Remove="Reports\ClienteReport.rdlc" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <EmbeddedResource Include="Reports\ClienteReport.rdlc" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="ReportViewerCore.WinForms" Version="15.1.25" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="DataSet\PerfumeriaDataSet.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>PerfumeriaDataSet.xsd</DependentUpon>
+	  </Compile>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="DataSet\PerfumeriaDataSet.xsd">
+	    <Generator>MSDataSetGenerator</Generator>
+	    <LastGenOutput>PerfumeriaDataSet.Designer.cs</LastGenOutput>
+	  </None>
 	</ItemGroup>
 
 </Project>

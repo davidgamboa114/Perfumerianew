@@ -33,7 +33,7 @@ namespace Perfumeria.Forms
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             int idAEliminar = (int)dataGridArea.CurrentRow.Cells[0].Value;
             string nombreAreaEliminar = (string)dataGridArea.CurrentRow.Cells[1].Value;
@@ -58,8 +58,8 @@ namespace Perfumeria.Forms
 
         private void btnEditar_Click_2(object sender, EventArgs e)
         {
-            int idAEditar = (int)dataGridArea.CurrentRow.Cells[0].Value;
-            FmrEditarArea fmrEditarArea = new FmrEditarArea(idAEditar);
+            int idAreaEditar = (int)dataGridArea.CurrentRow.Cells[0].Value;
+            FmrEditarArea fmrEditarArea = new FmrEditarArea(idAreaEditar);
             fmrEditarArea.ShowDialog();
             CargarGrilla();
         }
@@ -74,6 +74,21 @@ namespace Perfumeria.Forms
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
             CargarGrilla();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "¿Estás seguro de que deseas salir?",
+                "Confirmar salida",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

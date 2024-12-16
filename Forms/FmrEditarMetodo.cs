@@ -36,5 +36,20 @@ namespace Perfumeria.Forms
             context.SaveChanges();
             this.Close();
         }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close(); DialogResult result = MessageBox.Show(
+                "¿Estás seguro de que deseas salir?",
+                "Confirmar salida",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }

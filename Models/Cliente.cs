@@ -11,6 +11,9 @@ namespace Perfumeria.Models
         public int Id { get; set; }
         public string Nombre { get; set; }
 
+
+
+        //public string? NombreProducto { get; set; } // Nueva propiedad para el nombre del producto
         public int? ProductoId { get; set; }
         public Producto Producto { get; set; }
 

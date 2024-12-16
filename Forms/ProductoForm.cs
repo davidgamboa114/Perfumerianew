@@ -1,4 +1,5 @@
 ﻿using Perfumeria.Data;
+using Perfumeria.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,7 @@ namespace Perfumeria.Forms
 
         private void CargarGrilla()
         {
-            throw new NotImplementedException(); PerfumeriaContex context = new PerfumeriaContex();
+            PerfumeriaContex context = new PerfumeriaContex();
             if (txtBusqueda.Text.Length > 0)
             {
                 dataGridProducto.DataSource = context.Productos.Where(s => s.Nombre.Contains(txtBusqueda.Text)).ToList();
@@ -35,7 +36,7 @@ namespace Perfumeria.Forms
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             FmrNuevoProducto fmrNuevoProducto = new FmrNuevoProducto();
-            fmrNuevaProducto.ShowDialog();
+            fmrNuevoProducto.ShowDialog();
             CargarGrilla();
         }
 
@@ -69,7 +70,22 @@ namespace Perfumeria.Forms
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show(
+                "¿Estás seguro de que deseas salir?",
+                "Confirmar salida",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+        }
+
     }
 }

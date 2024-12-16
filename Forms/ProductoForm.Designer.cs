@@ -49,6 +49,7 @@
             btnEditar.TabIndex = 35;
             btnEditar.Text = "EDITAR";
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 

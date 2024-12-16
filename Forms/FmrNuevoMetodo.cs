@@ -24,7 +24,7 @@ namespace Perfumeria.Forms
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            var MetodoDePago = new MetodoDePago()
+            var MetodoDePago = new Perfumeria.Models.MetodoDePago()
             {
                 Nombre = txtNombre.Text,
             };
@@ -35,7 +35,17 @@ namespace Perfumeria.Forms
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show(
+                "¿Estás seguro de que deseas salir?",
+                "Confirmar salida",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
