@@ -1,13 +1,7 @@
 ﻿using Perfumeria.Data;
 using Perfumeria.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Perfumeria.Forms
@@ -20,62 +14,90 @@ namespace Perfumeria.Forms
             CargarGrilla();
         }
 
+        // Método para cargar los datos en la grilla
         private void CargarGrilla()
         {
-            PerfumeriaContex context = new PerfumeriaContex();
-            if (txtBusqueda.Text.Length > 0)
+            using (var context = new PerfumeriaContex())
             {
-                dataGridArea.DataSource = context.Areas.Where(s => s.Nombre.Contains(txtBusqueda.Text)).ToList();
+                // Buscar por texto de búsqueda o cargar todas las áreas
+                var areas = txtBusqueda.Text.Length > 0
+                    ? context.Areas.Where(s => s.Nombre.Contains(txtBusqueda.Text)).ToList()
+                    : context.Areas.ToList();
+
+                dataGridArea.DataSource = areas;
+            }
+        }
+
+        // Eliminar área seleccionada
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            // Verificar si se seleccionó una fila
+            if (dataGridArea.CurrentRow != null)
+            {
+                int idAEliminar = (int)dataGridArea.CurrentRow.Cells[0].Value;
+                string nombreAreaEliminar = (string)dataGridArea.CurrentRow.Cells[1].Value;
+
+                var resultado = MessageBox.Show($"¿Está seguro que desea Eliminar el área {nombreAreaEliminar}?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    try
+                    {
+                        using (var context = new PerfumeriaContex())
+                        {
+                            var area = context.Areas.Find(idAEliminar);
+                            if (area != null)
+                            {
+                                context.Areas.Remove(area);
+                                context.SaveChanges();
+                                CargarGrilla(); // Recargar la grilla después de eliminar
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: Ocurrió un problema al intentar eliminar el área {nombreAreaEliminar}. Detalle: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             else
             {
-                dataGridArea.DataSource = context.Areas.ToList();
+                MessageBox.Show("Por favor, seleccione un área para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        private void btnEliminar_Click_1(object sender, EventArgs e)
-        {
-            int idAEliminar = (int)dataGridArea.CurrentRow.Cells[0].Value;
-            string nombreAreaEliminar = (string)dataGridArea.CurrentRow.Cells[1].Value;
-            var resultado = MessageBox.Show($"¿Está seguro que desea Eliminar el area {nombreAreaEliminar}?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resultado == DialogResult.Yes)
-            {
-                try
-                {
-                    var context = new PerfumeriaContex();
-                    var area = context.Areas.Find(idAEliminar);
-                    context.Areas.Remove(area);
-                    context.SaveChanges();
-                    CargarGrilla();
-                }
-                catch (Exception error)
-                {
-
-                    MessageBox.Show($"Error, ocurrio un problema al intentar borrar el area {nombreAreaEliminar}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-        }
-
+        // Editar área seleccionada
         private void btnEditar_Click_2(object sender, EventArgs e)
         {
-            int idAreaEditar = (int)dataGridArea.CurrentRow.Cells[0].Value;
-            FmrEditarArea fmrEditarArea = new FmrEditarArea(idAreaEditar);
-            fmrEditarArea.ShowDialog();
-            CargarGrilla();
+            // Verificar si se seleccionó una fila
+            if (dataGridArea.CurrentRow != null)
+            {
+                int idAreaEditar = (int)dataGridArea.CurrentRow.Cells[0].Value;
+                FmrEditarArea fmrEditarArea = new FmrEditarArea(idAreaEditar);
+                fmrEditarArea.ShowDialog();
+                CargarGrilla(); // Recargar la grilla después de editar
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un área para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
+        // Guardar una nueva área
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             FmrNuevaArea fmrNuevaArea = new FmrNuevaArea();
             fmrNuevaArea.ShowDialog();
-            CargarGrilla();
+            CargarGrilla(); // Recargar la grilla después de guardar
         }
 
+        // Buscar mientras se escribe en el campo de búsqueda
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
-            CargarGrilla();
+            CargarGrilla(); // Recargar la grilla para reflejar la búsqueda
         }
 
+        // Salir del formulario
         private void btnSalir_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -92,4 +114,3 @@ namespace Perfumeria.Forms
         }
     }
 }
-

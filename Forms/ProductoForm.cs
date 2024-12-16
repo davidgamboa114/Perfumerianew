@@ -85,6 +85,25 @@ namespace Perfumeria.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            // Verificar que haya una fila seleccionada en el DataGridView
+            if (dataGridProducto.CurrentRow != null)
+            {
+                // Obtener el ID del producto seleccionado
+                int idProductoEditar = (int)dataGridProducto.CurrentRow.Cells[0].Value;
+
+                // Crear una instancia del formulario de edición de producto y pasar el ID
+                FmrEditarProducto fmrEditarProducto = new FmrEditarProducto(idProductoEditar);
+
+                // Mostrar el formulario de edición de producto
+                fmrEditarProducto.ShowDialog();
+
+                // Recargar la grilla después de la edición
+                CargarGrilla();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un producto para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
     }

@@ -285,11 +285,11 @@ namespace Perfumeria.DataSet {
             
             private global::System.Data.DataColumn columnNombre;
             
-            private global::System.Data.DataColumn columnProductoId;
+            private global::System.Data.DataColumn columnProductoNombre;
             
-            private global::System.Data.DataColumn columnAreaId;
+            private global::System.Data.DataColumn columnAreaNombre;
             
-            private global::System.Data.DataColumn columnMetodoDePagoId;
+            private global::System.Data.DataColumn columnMetodoDePagoNombre;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -344,25 +344,25 @@ namespace Perfumeria.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ProductoIdColumn {
+            public global::System.Data.DataColumn ProductoNombreColumn {
                 get {
-                    return this.columnProductoId;
+                    return this.columnProductoNombre;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AreaIdColumn {
+            public global::System.Data.DataColumn AreaNombreColumn {
                 get {
-                    return this.columnAreaId;
+                    return this.columnAreaNombre;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn MetodoDePagoIdColumn {
+            public global::System.Data.DataColumn MetodoDePagoNombreColumn {
                 get {
-                    return this.columnMetodoDePagoId;
+                    return this.columnMetodoDePagoNombre;
                 }
             }
             
@@ -403,14 +403,14 @@ namespace Perfumeria.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DSClienteRow AddDSClienteRow(string Id, string Nombre, string ProductoId, string AreaId, string MetodoDePagoId) {
+            public DSClienteRow AddDSClienteRow(string Id, string Nombre, string ProductoNombre, string AreaNombre, string MetodoDePagoNombre) {
                 DSClienteRow rowDSClienteRow = ((DSClienteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
                         Nombre,
-                        ProductoId,
-                        AreaId,
-                        MetodoDePagoId};
+                        ProductoNombre,
+                        AreaNombre,
+                        MetodoDePagoNombre};
                 rowDSClienteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDSClienteRow);
                 return rowDSClienteRow;
@@ -435,9 +435,9 @@ namespace Perfumeria.DataSet {
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
                 this.columnNombre = base.Columns["Nombre"];
-                this.columnProductoId = base.Columns["ProductoId"];
-                this.columnAreaId = base.Columns["AreaId"];
-                this.columnMetodoDePagoId = base.Columns["MetodoDePagoId"];
+                this.columnProductoNombre = base.Columns["ProductoNombre"];
+                this.columnAreaNombre = base.Columns["AreaNombre"];
+                this.columnMetodoDePagoNombre = base.Columns["MetodoDePagoNombre"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -447,12 +447,12 @@ namespace Perfumeria.DataSet {
                 base.Columns.Add(this.columnId);
                 this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombre);
-                this.columnProductoId = new global::System.Data.DataColumn("ProductoId", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProductoId);
-                this.columnAreaId = new global::System.Data.DataColumn("AreaId", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAreaId);
-                this.columnMetodoDePagoId = new global::System.Data.DataColumn("MetodoDePagoId", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMetodoDePagoId);
+                this.columnProductoNombre = new global::System.Data.DataColumn("ProductoNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProductoNombre);
+                this.columnAreaNombre = new global::System.Data.DataColumn("AreaNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAreaNombre);
+                this.columnMetodoDePagoNombre = new global::System.Data.DataColumn("MetodoDePagoNombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMetodoDePagoNombre);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -627,49 +627,49 @@ namespace Perfumeria.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ProductoId {
+            public string ProductoNombre {
                 get {
                     try {
-                        return ((string)(this[this.tableDSCliente.ProductoIdColumn]));
+                        return ((string)(this[this.tableDSCliente.ProductoNombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ProductoId\' de la tabla \'DSCliente\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ProductoNombre\' de la tabla \'DSCliente\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDSCliente.ProductoIdColumn] = value;
+                    this[this.tableDSCliente.ProductoNombreColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string AreaId {
+            public string AreaNombre {
                 get {
                     try {
-                        return ((string)(this[this.tableDSCliente.AreaIdColumn]));
+                        return ((string)(this[this.tableDSCliente.AreaNombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'AreaId\' de la tabla \'DSCliente\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'AreaNombre\' de la tabla \'DSCliente\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDSCliente.AreaIdColumn] = value;
+                    this[this.tableDSCliente.AreaNombreColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string MetodoDePagoId {
+            public string MetodoDePagoNombre {
                 get {
                     try {
-                        return ((string)(this[this.tableDSCliente.MetodoDePagoIdColumn]));
+                        return ((string)(this[this.tableDSCliente.MetodoDePagoNombreColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MetodoDePagoId\' de la tabla \'DSCliente\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'MetodoDePagoNombre\' de la tabla \'DSCliente\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDSCliente.MetodoDePagoIdColumn] = value;
+                    this[this.tableDSCliente.MetodoDePagoNombreColumn] = value;
                 }
             }
             
@@ -699,38 +699,38 @@ namespace Perfumeria.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsProductoIdNull() {
-                return this.IsNull(this.tableDSCliente.ProductoIdColumn);
+            public bool IsProductoNombreNull() {
+                return this.IsNull(this.tableDSCliente.ProductoNombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetProductoIdNull() {
-                this[this.tableDSCliente.ProductoIdColumn] = global::System.Convert.DBNull;
+            public void SetProductoNombreNull() {
+                this[this.tableDSCliente.ProductoNombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAreaIdNull() {
-                return this.IsNull(this.tableDSCliente.AreaIdColumn);
+            public bool IsAreaNombreNull() {
+                return this.IsNull(this.tableDSCliente.AreaNombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAreaIdNull() {
-                this[this.tableDSCliente.AreaIdColumn] = global::System.Convert.DBNull;
+            public void SetAreaNombreNull() {
+                this[this.tableDSCliente.AreaNombreColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsMetodoDePagoIdNull() {
-                return this.IsNull(this.tableDSCliente.MetodoDePagoIdColumn);
+            public bool IsMetodoDePagoNombreNull() {
+                return this.IsNull(this.tableDSCliente.MetodoDePagoNombreColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetMetodoDePagoIdNull() {
-                this[this.tableDSCliente.MetodoDePagoIdColumn] = global::System.Convert.DBNull;
+            public void SetMetodoDePagoNombreNull() {
+                this[this.tableDSCliente.MetodoDePagoNombreColumn] = global::System.Convert.DBNull;
             }
         }
         

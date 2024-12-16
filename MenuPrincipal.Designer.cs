@@ -40,9 +40,7 @@
             btnProductos = new Button();
             btnAreas = new Button();
             btnMetodo = new Button();
-            pictureBox1 = new PictureBox();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -108,6 +106,7 @@
             // 
             // btnProductos
             // 
+            btnProductos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnProductos.Location = new Point(126, 312);
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(113, 64);
@@ -118,6 +117,7 @@
             // 
             // btnAreas
             // 
+            btnAreas.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnAreas.Location = new Point(537, 78);
             btnAreas.Name = "btnAreas";
             btnAreas.Size = new Size(113, 64);
@@ -128,6 +128,7 @@
             // 
             // btnMetodo
             // 
+            btnMetodo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnMetodo.Location = new Point(537, 312);
             btnMetodo.Name = "btnMetodo";
             btnMetodo.Size = new Size(113, 64);
@@ -136,33 +137,23 @@
             btnMetodo.UseVisualStyleBackColor = true;
             btnMetodo.Click += btnMetodo_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(725, 449);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(btnMetodo);
             Controls.Add(btnAreas);
             Controls.Add(btnProductos);
             Controls.Add(btnClientes);
             Controls.Add(menuStrip1);
-            Controls.Add(pictureBox1);
             MainMenuStrip = menuStrip1;
             Name = "MenuPrincipal";
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -180,6 +171,5 @@
         private Button btnProductos;
         private Button btnAreas;
         private Button btnMetodo;
-        private PictureBox pictureBox1;
     }
 }

@@ -13,6 +13,7 @@ namespace Perfumeria.Models
 
 
 
+
         //public string? NombreProducto { get; set; } // Nueva propiedad para el nombre del producto
         public int? ProductoId { get; set; }
         public Producto Producto { get; set; }
@@ -21,6 +22,7 @@ namespace Perfumeria.Models
         public MetodoDePago MetodoDePago { get; set; }
         public int? AreaId { get; set; }
         public Area Area { get; set; }
+
 
 
 

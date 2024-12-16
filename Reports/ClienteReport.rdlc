@@ -6,6 +6,7 @@
         <Source>Embedded</Source>
         <Value>InstagramStoryNuestrosServiciosdePeluqueríaFotográficoNegro</Value>
         <Sizing>FitProportional</Sizing>
+        <Top>0.00001cm</Top>
         <Left>0.29104cm</Left>
         <Height>18.85667cm</Height>
         <Width>11.58062cm</Width>
@@ -15,36 +16,6 @@
           </Border>
         </Style>
       </Image>
-      <Textbox Name="Nombre">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Fields!ProductoId.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Nombre</rd:DefaultName>
-        <Top>10.8712cm</Top>
-        <Left>4.44183cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Nombre2">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -64,7 +35,7 @@
         <Left>4.44183cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>2</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -82,7 +53,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!AreaId.Value</Value>
+                <Value>=Fields!AreaNombre.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -93,8 +64,8 @@
         <Top>14.42cm</Top>
         <Left>4.44183cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>3</ZIndex>
+        <Width>3.18792cm</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -112,7 +83,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!MetodoDePagoId.Value</Value>
+                <Value>=Fields!MetodoDePagoNombre.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -121,6 +92,36 @@
         </Paragraphs>
         <rd:DefaultName>Nombre</rd:DefaultName>
         <Top>12.62083cm</Top>
+        <Left>4.44183cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.00812cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Nombre">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!ProductoNombre.FormattedValue</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Nombre</rd:DefaultName>
+        <Top>10.8712cm</Top>
         <Left>4.44183cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -175,16 +176,16 @@
           <DataField>Nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ProductoId">
-          <DataField>ProductoId</DataField>
+        <Field Name="ProductoNombre">
+          <DataField>ProductoNombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="AreaId">
-          <DataField>AreaId</DataField>
+        <Field Name="AreaNombre">
+          <DataField>AreaNombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="MetodoDePagoId">
-          <DataField>MetodoDePagoId</DataField>
+        <Field Name="MetodoDePagoNombre">
+          <DataField>MetodoDePagoNombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
