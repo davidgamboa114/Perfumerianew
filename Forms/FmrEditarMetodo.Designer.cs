@@ -80,6 +80,7 @@
             Controls.Add(BtnCancelar);
             Controls.Add(BtnGuardar);
             Name = "FmrEditarMetodo";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "FmrEditarMetodo";
             ResumeLayout(false);
             PerformLayout();

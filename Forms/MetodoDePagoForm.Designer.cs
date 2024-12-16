@@ -134,6 +134,7 @@
             Controls.Add(label1);
             Controls.Add(dataGridMetodo);
             Name = "MetodoDePagoForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "MetodoDePago";
             ((System.ComponentModel.ISupportInitialize)dataGridMetodo).EndInit();
             ResumeLayout(false);

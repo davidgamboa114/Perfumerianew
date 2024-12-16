@@ -80,6 +80,7 @@
             Controls.Add(BtnCancelar);
             Controls.Add(BtnGuardar);
             Name = "FmrNuevaArea";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "FmrNuevaArea";
             ResumeLayout(false);
             PerformLayout();

@@ -135,6 +135,7 @@
             Controls.Add(label1);
             Controls.Add(dataGridProducto);
             Name = "ProductoForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "ProductoForm";
             ((System.ComponentModel.ISupportInitialize)dataGridProducto).EndInit();
             ResumeLayout(false);

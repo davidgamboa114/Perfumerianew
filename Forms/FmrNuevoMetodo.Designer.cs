@@ -80,6 +80,7 @@
             Controls.Add(BtnCancelar);
             Controls.Add(BtnGuardar);
             Name = "FmrNuevoMetodo";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "FmrNuevoMetodo";
             ResumeLayout(false);
             PerformLayout();

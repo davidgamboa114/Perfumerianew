@@ -149,6 +149,7 @@
             Controls.Add(txtNombre);
             Controls.Add(label1);
             Name = "FmrNuevoCliente";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "FmrNuevoCliente";
             ResumeLayout(false);
             PerformLayout();

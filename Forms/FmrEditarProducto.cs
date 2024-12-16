@@ -20,7 +20,14 @@ namespace Perfumeria.Forms
         {
             InitializeComponent();
             this.idProductoEditar = idProductoEditar;
-            CargarDatosEnPantalla();
+            CargarCategorias(); // Cargar las categorías en el ComboBox
+            CargarDatosEnPantalla(); // Cargar los datos del producto
+        }
+
+        // Método para cargar las categorías en el ComboBox
+        private void CargarCategorias()
+        {
+            comboCategorias.DataSource = Enum.GetValues(typeof(Categoria)).Cast<Categoria>().ToList();
         }
 
         // Método para cargar los datos del producto en los controles
@@ -31,9 +38,9 @@ namespace Perfumeria.Forms
 
             if (producto != null)
             {
-                // Cargar los datos en los controles (por ejemplo, TextBox)
+                // Cargar los datos en los controles
                 txtNombre.Text = producto.Nombre;
-                // Puedes agregar más campos si es necesario, como Precio, Descripción, etc.
+                comboCategorias.SelectedItem = producto.CategoriaProducto; // Seleccionar la categoría actual
             }
             else
             {
@@ -51,7 +58,7 @@ namespace Perfumeria.Forms
             {
                 // Actualizar los datos del producto con los nuevos valores
                 producto.Nombre = txtNombre.Text;
-                // Si tienes más campos, actualízalos aquí...
+                producto.CategoriaProducto = (Categoria)comboCategorias.SelectedItem; // Actualizar la categoría seleccionada
 
                 // Marcar el producto como modificado
                 context.Entry(producto).State = EntityState.Modified;

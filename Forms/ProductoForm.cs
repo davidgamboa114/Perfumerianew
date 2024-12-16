@@ -22,16 +22,26 @@ namespace Perfumeria.Forms
 
         private void CargarGrilla()
         {
-            PerfumeriaContex context = new PerfumeriaContex();
-            if (txtBusqueda.Text.Length > 0)
+            using (var context = new PerfumeriaContex())
             {
-                dataGridProducto.DataSource = context.Productos.Where(s => s.Nombre.Contains(txtBusqueda.Text)).ToList();
-            }
-            else
-            {
-                dataGridProducto.DataSource = context.Productos.ToList();
+                var productos = string.IsNullOrEmpty(txtBusqueda.Text)
+                    ? context.Productos.ToList()
+                    : context.Productos.Where(s => s.Nombre.Contains(txtBusqueda.Text)).ToList();
+
+                var productosConCategoria = productos.Select(p => new
+                {
+                    p.Id,
+                    p.Nombre,
+                    Categoria = p.CategoriaProducto.ToString()
+                }).ToList();
+
+                dataGridProducto.DataSource = productosConCategoria;
+
+                // Personalizar el encabezado de la columna 'Categoria'
+                dataGridProducto.Columns["Categoria"].HeaderText = "Categoría";
             }
         }
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {

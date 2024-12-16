@@ -131,6 +131,9 @@ namespace Perfumeria.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("CategoriaProducto")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -143,11 +146,13 @@ namespace Perfumeria.Migrations
                         new
                         {
                             Id = 1,
+                            CategoriaProducto = 0,
                             Nombre = "Boos"
                         },
                         new
                         {
                             Id = 2,
+                            CategoriaProducto = 0,
                             Nombre = "Esmalte"
                         });
                 });

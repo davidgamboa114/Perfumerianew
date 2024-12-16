@@ -150,6 +150,7 @@
             Controls.Add(label1);
             Controls.Add(dataGridClientes);
             Name = "ClienteForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "ClienteForm";
             ((System.ComponentModel.ISupportInitialize)dataGridClientes).EndInit();
             ResumeLayout(false);

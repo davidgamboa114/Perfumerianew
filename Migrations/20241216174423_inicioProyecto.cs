@@ -7,7 +7,7 @@
 namespace Perfumeria.Migrations
 {
     /// <inheritdoc />
-    public partial class InicioProyecto : Migration
+    public partial class inicioProyecto : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -44,7 +44,8 @@ namespace Perfumeria.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CategoriaProducto = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -111,11 +112,11 @@ namespace Perfumeria.Migrations
 
             migrationBuilder.InsertData(
                 table: "Productos",
-                columns: new[] { "Id", "Nombre" },
+                columns: new[] { "Id", "CategoriaProducto", "Nombre" },
                 values: new object[,]
                 {
-                    { 1, "Boos" },
-                    { 2, "Esmalte" }
+                    { 1, 0, "Boos" },
+                    { 2, 0, "Esmalte" }
                 });
 
             migrationBuilder.CreateIndex(

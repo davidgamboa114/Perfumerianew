@@ -149,6 +149,7 @@
             Controls.Add(txtNombre);
             Controls.Add(label1);
             Name = "FrmEditarCliente";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "FrmEditarCliente";
             ResumeLayout(false);
             PerformLayout();

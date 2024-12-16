@@ -151,7 +151,9 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "MenuPrincipal";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Form1";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
