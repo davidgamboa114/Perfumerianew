@@ -113,7 +113,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!ProductoNombre.FormattedValue</Value>
+                <Value>=Fields!ProductoNombre.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
